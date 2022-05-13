@@ -1,2 +1,39 @@
 // Import page-specific CSS files here.
 @import "home";
+
+
+h2 {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.btn-primary a {
+  color: white;
+  text-decoration: none;
+}
+
+.btn-primary {
+  border-radius: 20px;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 8px;
+  flex-grow: 1;
+}
+
+.card-category a {
+  font-family: 'Quicksand', sans-serif;
+  color: white;
+  text-decoration: none;
+}

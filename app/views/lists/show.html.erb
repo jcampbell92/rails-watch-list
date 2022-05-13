@@ -1,8 +1,31 @@
-<h1><%= @list.name %></h1>
+<div class="banner" style="background-image: linear-gradient(rgba(250,250,250,0.3),rgba(250,250,250,0.30)), url(<%= @list.movies.last.poster_url %>);">
+  <div class="container">
+    <h1><%= @list.name %></h1>
+  </div>
+</div>
 <ul>
-  <% @bookmarks.each do |bookmark|%>
-  <li><%= bookmark.movie.title%> -- <%= link_to "X", bookmarks_path(bookmark), method: :delete %></li>
-  <% end %>
-<%= link_to "Add movies", new_bookmark_path %>
-<%= link_to "Go back", lists_path %>
-</ul>
+<ul>
+<div class="container">
+  <div class="d-flex justify-content-between pt-4">
+    <h2>Movies</h2>
+    <p class="btn btn-primary"><%= link_to "Add a movie", new_bookmark_path(@list) %></p>
+  </div>
+    <div class="row">
+      <% @bookmarks.each do |bookmark|%>
+        <div class='col col-sm-6'>
+          <div class="card-trip">
+            <img src="<%= bookmark.movie.poster_url %>" />
+            <div class="card-trip-infos">
+              <div>
+                <h2 class="title"><%= bookmark.movie.title %></h2>
+                <p><%= bookmark.movie.overview %></p>
+              </div>
+              <h2 class="card-trip-pricing"><%= bookmark.movie.rating%></h2>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <% end %>
+    </div>
+</div>
+  </ul>
